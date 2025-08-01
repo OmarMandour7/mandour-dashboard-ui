@@ -20,13 +20,13 @@ export default function Sidebar({ isOpen, setIsOpen }) {
      
       <div>
         {/* Logo */}
-        <div className="flex items-center gap-2 px-6 py-6 justify-between">
-          <div className="bg-indigo-100 p-2 rounded-lg">
+        <div className="flex items-center justify-between gap-2 px-6 py-6">
+          <div className="p-2 bg-indigo-100 rounded-lg">
             <Book size="20" color="#7064F5" variant="Bold" />
           </div>
-          <span className="font-semibold text-lg">Omar Mandour</span>
-           <div className="lg:hidden flex justify-end p-4">
-  <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-800 text-xl">
+          <span className="text-lg font-semibold">Omar Mandour</span>
+           <div className="flex justify-end p-4 lg:hidden">
+  <button onClick={() => setIsOpen(false)} className="text-xl text-gray-500 hover:text-gray-800">
     &times;
   </button>
 </div>
@@ -34,23 +34,23 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
         {/* Navigation */}
         <nav className="flex flex-col gap-4 px-6 text-gray-600">
-          <Link to="/" className="flex items-center gap-3 text-indigo-600 font-semibold">
+          <Link to="/" className="flex items-center gap-3 font-semibold text-indigo-600 duration-200 hover:translate-x-10">
             <Home2 size="20" color="#7064F5" variant="Bold" />
             Overview
           </Link>
-          <Link to="/task" className="flex items-center gap-3 hover:text-indigo-600">
+          <Link to="/task" className="flex items-center gap-3 duration-200 hover:text-indigo-600 hover:translate-x-10">
             <Book size="20" color="#7064F5" variant="Outline" />
             Task
           </Link>
-          <Link to="/mentors" className="flex items-center gap-3 hover:text-indigo-600">
+          <Link to="/mentors" className="flex items-center gap-3 duration-200 hover:text-indigo-600 hover:translate-x-10">
             <People size="20" color="#7064F5" variant="Outline" />
             Mentors
           </Link>
-          <Link to="/message" className="flex items-center gap-3 hover:text-indigo-600">
+          <Link to="/message" className="flex items-center gap-3 duration-200 hover:text-indigo-600 hover:translate-x-10">
             <Message size="20" color="#7064F5" variant="Outline" />
             Message
           </Link>
-          <Link to="/settings" className="flex items-center gap-3 hover:text-indigo-600">
+          <Link to="/settings" className="flex items-center gap-3 duration-200 hover:text-indigo-600 hover:translate-x-10">
             <Setting2 size="20" color="#7064F5" variant="Outline" />
             Settings
           </Link>
@@ -58,15 +58,15 @@ export default function Sidebar({ isOpen, setIsOpen }) {
       </div>
 
       {/* Help Center Box */}
-      <div className="bg-gray-900 text-white m-3 p-4 rounded-xl relative mt-64">
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-full shadow">
+      <div className="relative p-4 m-3 mt-64 text-white bg-gray-900 rounded-xl">
+        <div className="absolute p-2 transform -translate-x-1/2 bg-white rounded-full shadow -top-4 left-1/2">
           <MessageQuestion size="20" color="#111" variant="Outline" />
         </div>
-        <h3 className="text-sm font-semibold mt-6 mb-2 text-center">Help Center</h3>
-        <p className="text-xs text-center mb-3 opacity-75">
+        <h3 className="mt-6 mb-2 text-sm font-semibold text-center">Help Center</h3>
+        <p className="mb-3 text-xs text-center opacity-75">
           Having Trouble in Learning? Please contact us for more questions.
         </p>
-        <button className="block w-full text-sm bg-white text-gray-900 font-medium py-1 rounded hover:bg-gray-200 transition">
+        <button className="block w-full py-1 text-sm font-medium text-gray-900 transition bg-white rounded hover:bg-gray-200">
           Go To Help Center
         </button>
       </div>

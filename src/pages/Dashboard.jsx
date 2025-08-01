@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import RunningTaskCard from '../components/RunningTaskCard';
 import ActivityChart from '../components/ActivityChart';
 import MentorsSection from '../components/MentorsSection';
@@ -7,6 +6,8 @@ import UpcomingTasksSection from '../components/UpcomingTasksSection';
 import CalendarSection from '../components/CalenderSection';
 import TaskToday from '../components/TaskToday';
 import TaskDetail from '../components/TaskDetails';
+import PageTransition from "../components/PageTransition";
+
 export default function Dashboard() {
 
   const mentors = [
@@ -29,15 +30,16 @@ export default function Dashboard() {
   ];
   
   return (
-    <div className="flex flex-col gap-6 p-6">
+     <PageTransition>
+ <div className="flex flex-col gap-6 p-6">
       {/* Navbar */}
       
 
       {/* Main Dashboard Content */}
-     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-fr">
+     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 auto-rows-fr">
 
         <div className="xl:col-span-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-5">
+          <div className="grid grid-cols-1 gap-6 my-5 md:grid-cols-2">
         <RunningTaskCard />
         <ActivityChart/>
           </div>
@@ -57,5 +59,7 @@ export default function Dashboard() {
      
       </div>
     </div>
+     </PageTransition>
+   
   );
 }

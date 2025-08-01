@@ -43,7 +43,7 @@ export default function ChatWindow() {
   return (
     <div className="flex flex-col flex-1 h-full bg-white">
       {/* Header */}
-      <div className="flex justify-between items-center p-4 border-b">
+      <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center gap-3">
           <img src="https://i.pravatar.cc/150?img=20" className="w-10 h-10 rounded-full" />
           <div>
@@ -59,7 +59,7 @@ export default function ChatWindow() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-6 space-y-4">
+      <div className="flex-1 px-4 py-6 space-y-4 overflow-y-auto">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -72,7 +72,7 @@ export default function ChatWindow() {
             {msg.type === 'text' ? (
               <p>{msg.content}</p>
             ) : (
-              <img src={msg.content} alt="chat" className="rounded-lg w-64 h-auto mt-1 p-1" />
+              <img src={msg.content} alt="chat" className="w-64 h-auto p-1 mt-1 rounded-lg" />
             )}
             <div className="text-[13px] text-right mt-1 opacity-50">{msg.time}</div>
           </div>
@@ -80,13 +80,13 @@ export default function ChatWindow() {
       </div>
 
       {/* Input */}
-      <div className="p-4 border-t flex items-center gap-2">
+      <div className="flex items-center gap-2 p-4 border-t">
         <input
           type="text"
           placeholder="Send your message..."
-          className="flex-1 py-2 px-4 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="flex-1 px-4 py-2 text-sm border rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-400"
         />
-        <button className="bg-indigo-500 p-2 rounded-full text-white hover:bg-indigo-600">
+        <button className="p-2 text-white bg-indigo-500 rounded-full hover:bg-indigo-600">
           <Send2 size="18" />
         </button>
       </div>

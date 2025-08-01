@@ -3,7 +3,7 @@ import TasksHeader from '../components/TasksHeader'
 import TaskSection from '../components/TaskSection';
 import task1 from '../images/task1.png';
 import task2 from '../images/task2.png';
-import Navbar from '../components/Navbar';
+import PageTransition from "../components/PageTransition";
 
 const Tasks = () => {
   const timeLimitTasks = [
@@ -55,13 +55,14 @@ const Tasks = () => {
 
 
   return (
-    <div className="container mx-auto p-6">
+     <PageTransition> <div className="container p-6 mx-auto">
         <TasksHeader/>
          <div className="p-6 space-y-6">
       <TaskSection title="Time Limit" tasks={timeLimitTasks} />
       <TaskSection title="New Task" tasks={timeLimitTasks} />
     </div>
-    </div>
+    </div></PageTransition>
+   
   )
 }
 

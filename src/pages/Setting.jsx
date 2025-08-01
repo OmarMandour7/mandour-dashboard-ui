@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import GeneralSettingsForm from '../components/GeneralSettingsForm';
+import PageTransition from "../components/PageTransition";
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState('general');
 
   return (
-    <div className="p-6 space-y-6">
+     <PageTransition> <div className="p-6 space-y-6">
       {/* العنوان */}
       <h2 className="text-xl font-semibold text-gray-800">Settings</h2>
 
@@ -40,6 +41,7 @@ export default function Settings() {
         {activeTab === 'general' && <GeneralSettingsForm />}
         {activeTab === 'notifications' && <div className="text-sm text-gray-500">Notifications settings coming soon...</div>}
       </div>
-    </div>
+    </div></PageTransition>
+   
   );
 }

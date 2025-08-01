@@ -1,5 +1,6 @@
 import React from 'react';
 import MentorsSection from '../components/MentorsSection';
+import PageTransition from "../components/PageTransition";
 
 const mentors = [
   {
@@ -77,10 +78,11 @@ const mentors = [
   }]
 export default function Mentors() {
   return (
-    <div className="p-6">
+     <PageTransition> <div className="p-6">
       <MentorsSection title="Recent  Mentors" mentors={mentors1} />
 
        <MentorsSection title="Top Mentors" mentors={mentors} />
-    </div>
+    </div></PageTransition>
+   
   );
 }
